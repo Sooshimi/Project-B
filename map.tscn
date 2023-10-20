@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://5bijxq2eag3q"]
+
+[sub_resource type="TileSet" id="TileSet_yukif"]
+
+[node name="Map" type="TileMap"]
+tile_set = SubResource("TileSet_yukif")
+format = 2
