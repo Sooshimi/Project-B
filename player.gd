@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var speed := 100
+var input_direction : Vector2
 
 @onready var animation_tree := $AnimationTree
 
@@ -12,7 +13,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func get_input():
-	var input_direction := Input.get_vector("left", "right", "up", "down")
+	input_direction = Input.get_vector("left", "right", "up", "down")
 	velocity = input_direction * speed
 	
 	if velocity == Vector2.ZERO:
