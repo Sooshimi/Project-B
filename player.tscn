@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cvrnk3e126k27" path="res://assets/redsamurai.png" id="1_quy3s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fqyrm"]
-size = Vector2(12, 14)
+size = Vector2(16, 16)
 
 [sub_resource type="Animation" id="Animation_n2s2e"]
 length = 0.001
@@ -238,7 +238,6 @@ hframes = 4
 vframes = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_fqyrm")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
