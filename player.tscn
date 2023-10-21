@@ -228,6 +228,7 @@ states/Walk/position = Vector2(506, 99.375)
 transitions = ["Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_fpxwc"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_dmmvm"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_xg60j")]
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 3
 script = ExtResource("1_5etoj")
 metadata/_edit_group_ = true
 
