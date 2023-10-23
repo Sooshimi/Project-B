@@ -29,11 +29,11 @@ func _deferred_goto_scene(path):
 	# (Optional) Make compatible with SceneTree.change_scene_to_file() API
 	get_tree().current_scene = current_scene
 
-func add_player(player):
+func add_player(player, position : Vector2):
 	var load_player = ResourceLoader.load(player)
 	player = load_player.instantiate()
-	player.position = Vector2(128,115)
 	get_tree().root.add_child(player)
+	player.position = position
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

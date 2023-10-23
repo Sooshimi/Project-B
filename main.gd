@@ -14,4 +14,4 @@ func _process(delta):
 
 func _on_enter_building_1_body_entered(body):
 	Global.goto_scene("res://indoor_1.tscn")
-	Global.add_player("res://player.tscn")
+	Global.add_player("res://player.tscn", Vector2(72,151))
