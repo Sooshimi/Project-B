@@ -1,0 +1,40 @@
+extends Node
+
+var current_scene = null
+var player = null
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	var root = get_tree().get_root()
+	current_scene = root.get_child(root.get_child_count() -1)
+
+func goto_scene(path):
+	# Defer the scene load to a later time when no code is running
+	# in the current scene.
+	call_deferred("_deferred_goto_scene", path)
+
+func _deferred_goto_scene(path):
+	# Now safe to remove current scene
+	current_scene.free()
+	
+	# Load new scene
+	var loaded_scene = ResourceLoader.load(path)
+	
+	# Instantiate new scene
+	current_scene = loaded_scene.instantiate()
+	
+	# Add it as a child of the root
+	get_tree().root.add_child(current_scene)
+	
+	# (Optional) Make compatible with SceneTree.change_scene_to_file() API
+	get_tree().current_scene = current_scene
+
+func add_player(player):
+	var load_player = ResourceLoader.load(player)
+	player = load_player.instantiate()
+	player.position = Vector2(128,115)
+	get_tree().root.add_child(player)
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass

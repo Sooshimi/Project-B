@@ -11,3 +11,7 @@ func _input(event):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+func _on_enter_building_1_body_entered(body):
+	Global.goto_scene("res://indoor_1.tscn")
+	Global.add_player("res://player.tscn")
