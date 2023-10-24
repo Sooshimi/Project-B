@@ -16,12 +16,12 @@ func get_scene():
 	current_scene = root.get_child(root.get_child_count() -1)
 	return current_scene
 
-func goto_scene(path : String):
+func goto_scene(path:String):
 	# Defer the scene load to a later time when no code is running
 	# in the current scene.
 	call_deferred("_deferred_goto_scene", path)
 
-func _deferred_goto_scene(path : String):
+func _deferred_goto_scene(path:String):
 	current_scene.free() # Now safe to remove current scene
 	var loaded_scene = ResourceLoader.load(path) # Load new scene
 	current_scene = loaded_scene.instantiate() # Instantiate new scene
@@ -29,10 +29,10 @@ func _deferred_goto_scene(path : String):
 	# (Optional) Make compatible with SceneTree.change_scene_to_file() API
 	get_tree().current_scene = current_scene
 
-func add_player_to_scene(path : String, position : Vector2):
+func add_player_to_scene(path:String, position:Vector2):
 	call_deferred("_deferred_add_player_to_scene", path, position)
 
-func _deferred_add_player_to_scene(path : String, position : Vector2):
+func _deferred_add_player_to_scene(path:String, position:Vector2):
 	var load_player = ResourceLoader.load(path)
 	player = load_player.instantiate()
 	get_scene().add_child(player)
