@@ -14,13 +14,13 @@ script = ExtResource("1_dvs6a")
 [node name="Map" parent="." instance=ExtResource("2_m5wda")]
 position = Vector2(-335, -202)
 
-[node name="Player" parent="." instance=ExtResource("1_d80rc")]
-position = Vector2(-182, -90)
-
 [node name="EnterBuilding1" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnterBuilding1"]
 position = Vector2(-215, -119)
 shape = SubResource("RectangleShape2D_3uc3k")
+
+[node name="Player" parent="." instance=ExtResource("1_d80rc")]
+position = Vector2(-207, -83)
 
 [connection signal="body_entered" from="EnterBuilding1" to="." method="_on_enter_building_1_body_entered"]

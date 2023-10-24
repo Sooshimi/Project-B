@@ -8,6 +8,10 @@ func _ready():
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() -1)
 
+func _input(event):
+	if Input.is_action_pressed("escape"):
+		get_tree().quit()
+
 func goto_scene(path):
 	# Defer the scene load to a later time when no code is running
 	# in the current scene.
@@ -29,7 +33,7 @@ func _deferred_goto_scene(path):
 	# (Optional) Make compatible with SceneTree.change_scene_to_file() API
 	get_tree().current_scene = current_scene
 
-func add_player(player, position : Vector2):
+func add_player_to_scene(player, position : Vector2):
 	var load_player = ResourceLoader.load(player)
 	player = load_player.instantiate()
 	get_tree().root.add_child(player)
