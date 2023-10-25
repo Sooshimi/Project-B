@@ -14,3 +14,6 @@ func _process(delta):
 
 func _on_enter_building_1_body_entered(body):
 	Global.goto_scene("res://house_1.tscn")
+
+func _on_enter_building_2_body_entered(body):
+	Global.goto_scene("res://house_2.tscn")

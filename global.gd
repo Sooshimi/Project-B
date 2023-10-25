@@ -3,6 +3,7 @@ extends Node
 var current_scene = null
 var player = null
 var start_game := true
+var remaining_player_hp = null
 
 func _ready():
 	get_scene()

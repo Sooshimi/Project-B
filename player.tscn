@@ -223,6 +223,7 @@ states/Idle/position = Vector2(366.5, 101.375)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_cg6yo")
 states/Walk/position = Vector2(506, 99.375)
 transitions = ["Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_fpxwc"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_dmmvm"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_xg60j")]
+graph_offset = Vector2(-0.000271133, -19.485)
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 3
@@ -245,5 +246,6 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_tkygm")
 anim_player = NodePath("../AnimationPlayer")
-parameters/Idle/blend_position = Vector2(0, 0)
+active = true
+parameters/Idle/blend_position = Vector2(2.08165e-12, 2.08165e-12)
 parameters/Walk/blend_position = Vector2(0, 0)
