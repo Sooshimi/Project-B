@@ -19,13 +19,16 @@ position = Vector2(-335, -202)
 position = Vector2(-188, -56)
 
 [node name="EnterBuilding1" type="Area2D" parent="."]
+position = Vector2(0, -3)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnterBuilding1"]
 position = Vector2(-215, -119)
 shape = SubResource("RectangleShape2D_3uc3k")
 
 [node name="EnterBuilding2" type="Area2D" parent="."]
-position = Vector2(96, -32)
+position = Vector2(96, -35)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnterBuilding2"]
 position = Vector2(-215, -119)

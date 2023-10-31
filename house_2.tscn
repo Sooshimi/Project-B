@@ -13,6 +13,8 @@ script = ExtResource("1_bq1fx")
 [node name="indoor_2" parent="." instance=ExtResource("2_ym8sp")]
 
 [node name="ExitBuilding2" type="Area2D" parent="indoor_2"]
+position = Vector2(0, 8)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="indoor_2/ExitBuilding2"]
 position = Vector2(72, 157)

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed := 100
+var speed := 75
 var input_direction : Vector2
 
 @onready var animation_tree := $AnimationTree
@@ -19,5 +19,6 @@ func get_input():
 	if velocity == Vector2.ZERO:
 		animation_tree.get("parameters/playback").travel("Idle")
 	else:
-		animation_tree.get("parameters/playback").travel("Idle")
+		animation_tree.get("parameters/playback").travel("Walk")
 		animation_tree.set("parameters/Idle/blend_position", input_direction)
+		animation_tree.set("parameters/Walk/blend_position", input_direction)
