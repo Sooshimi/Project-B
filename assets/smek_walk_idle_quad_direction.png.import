@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://p1o7lggm2qdx"
-path="res://.godot/imported/smek_walk_S_E_W.png-b440feab87759872fa9b4fb34a49c9a3.ctex"
+uid="uid://bjnkgi5mxs7l6"
+path="res://.godot/imported/smek_walk_idle_quad_direction.png-f19bb548051e9ede28d810447d70bca5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/smek_walk_S_E_W.png"
-dest_files=["res://.godot/imported/smek_walk_S_E_W.png-b440feab87759872fa9b4fb34a49c9a3.ctex"]
+source_file="res://assets/smek_walk_idle_quad_direction.png"
+dest_files=["res://.godot/imported/smek_walk_idle_quad_direction.png-f19bb548051e9ede28d810447d70bca5.ctex"]
 
 [params]
 

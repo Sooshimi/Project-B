@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=3 uid="uid://inplngiwhrep"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_5etoj"]
-[ext_resource type="Texture2D" uid="uid://p1o7lggm2qdx" path="res://assets/smek_walk_S_E_W.png" id="2_6wrgp"]
+[ext_resource type="Texture2D" uid="uid://bjnkgi5mxs7l6" path="res://assets/smek_walk_idle_quad_direction.png" id="2_eq5c7"]
 
 [sub_resource type="Animation" id="Animation_8r1lq"]
 length = 0.001
@@ -61,6 +61,8 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_aaklf"]
 resource_name = "idle_left"
+length = 1.8
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -68,10 +70,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [45]
+"values": [72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -88,6 +90,8 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_q8e60"]
 resource_name = "idle_right"
+length = 1.8
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -95,10 +99,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [30]
+"values": [36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -115,6 +119,8 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_243n5"]
 resource_name = "idle_up"
+length = 1.6
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -122,10 +128,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [60]
+"values": [108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -154,7 +160,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [16, 17, 18, 17]
+"values": [19, 20, 21, 18]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -167,35 +173,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [PackedVector2Array(-9, 4, -8, 1, -8, -9, -7, -10, 4, -10, 5, -9, 5, 1, 6, 2, 7, 5, 7, 9, 6, 11, 5, 12, 3, 12, 3, 14, 2, 15, 0, 15, -1, 14, -1, 12, -7, 12, -9, 8), PackedVector2Array(-10, 5, -8, 1, -8, -10, -7, -11, 4, -11, 5, -10, 5, 1, 6, 2, 7, 5, 7, 11, 6, 13, 2, 14, 0, 14, -1, 13, -2, 13, -3, 14, -5, 14, -6, 13, -8, 12, -9, 11, -10, 8), PackedVector2Array(-10, 4, -8, 1, -8, -9, -7, -10, 4, -10, 5, -9, 5, 1, 5, 3, 6, 5, 6, 10, 5, 11, 3, 12, -2, 12, -2, 14, -3, 15, -5, 15, -6, 14, -7, 12, -9, 11, -10, 10), PackedVector2Array(-10, 5, -8, 1, -8, -10, -7, -11, 4, -11, 5, -10, 5, 1, 6, 2, 7, 5, 7, 11, 6, 13, 2, 14, 0, 14, -1, 13, -2, 13, -3, 14, -5, 14, -6, 13, -8, 12, -9, 11, -10, 8)]
-}
-
-[sub_resource type="Animation" id="Animation_kx742"]
-resource_name = "walk_right"
-length = 0.8
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [31, 30, 33, 30]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CollisionPolygon2D:polygon")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [PackedVector2Array(-6, -2, -7, -3, -7, -7, -3, -10, 0, -10, 4, -7, 4, 2, 2, 2, 2, 5, 4, 6, 4, 8, 2, 9, 2, 10, 3, 11, 3, 13, 2, 14, 0, 14, -1, 13, -3, 13, -5, 14, -14, 14, -15, 12, -8, 6, -7, 4, -6, 3), PackedVector2Array(-6, -1, -7, -4, -7, -8, -3, -11, 0, -11, 4, -8, 4, 1, 2, 1, 2, 5, 2, 7, 1, 7, 1, 13, 0, 14, -5, 14, -14, 14, -14, 12, -9, 7, -7, 5), PackedVector2Array(-6, -2, -7, -3, -7, -7, -3, -10, 0, -10, 4, -7, 4, 2, 2, 2, 2, 5, 4, 6, 4, 8, 2, 9, 2, 10, 3, 11, 3, 13, 2, 14, 0, 14, -1, 13, -3, 13, -5, 14, -14, 14, -15, 12, -8, 6, -7, 4, -6, 3), PackedVector2Array(-6, -1, -7, -4, -7, -8, -3, -11, 0, -11, 4, -8, 4, 1, 2, 1, 2, 5, 2, 7, 1, 7, 1, 13, 0, 14, -5, 14, -14, 14, -14, 12, -9, 7, -7, 5)]
 }
 
 [sub_resource type="Animation" id="Animation_nbr3v"]
@@ -212,7 +189,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [46, 45, 48, 47]
+"values": [91, 92, 93, 90]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -227,8 +204,10 @@ tracks/1/keys = {
 "values": [PackedVector2Array(-7, 2, -7, -3, -7, -7, -3, -10, 0, -10, 4, -7, 4, -3, 3, -2, 3, 4, 5, 6, 12, 12, 11, 14, 2, 14, 0, 13, -2, 13, -3, 14, -5, 14, -6, 13, -6, 11, -5, 10, -5, 8, -5, 3), PackedVector2Array(-7, 1, -7, -3, -7, -8, -3, -11, 0, -11, 4, -8, 4, -4, 3, -3, 3, 3, 5, 6, 11, 12, 11, 14, 2, 14, 0, 14, -3, 14, -4, 13, -4, 10, -5, 8, -5, 2), PackedVector2Array(-7, 2, -7, -7, -3, -10, 0, -10, 4, -7, 4, -3, 3, -2, 3, 3, 5, 6, 12, 12, 11, 14, 2, 14, -1, 12, -2, 12, -4, 14, -6, 14, -7, 13, -7, 11, -5, 10, -6, 8, -6, 6, -5, 3), PackedVector2Array(-7, 1, -7, -3, -7, -8, -3, -11, 0, -11, 4, -8, 4, -4, 3, -3, 3, 3, 5, 6, 11, 12, 11, 14, 2, 14, 0, 14, -3, 14, -4, 13, -4, 10, -5, 8, -5, 2)]
 }
 
-[sub_resource type="Animation" id="Animation_cpijx"]
-resource_name = "walk_up"
+[sub_resource type="Animation" id="Animation_kx742"]
+resource_name = "walk_right"
+length = 0.8
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -236,10 +215,39 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [60]
+"values": [55, 56, 57, 54]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionPolygon2D:polygon")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [PackedVector2Array(-6, -2, -7, -3, -7, -7, -3, -10, 0, -10, 4, -7, 4, 2, 2, 2, 2, 5, 4, 6, 4, 8, 2, 9, 2, 10, 3, 11, 3, 13, 2, 14, 0, 14, -1, 13, -3, 13, -5, 14, -14, 14, -15, 12, -8, 6, -7, 4, -6, 3), PackedVector2Array(-6, -1, -7, -4, -7, -8, -3, -11, 0, -11, 4, -8, 4, 1, 2, 1, 2, 5, 2, 7, 1, 7, 1, 13, 0, 14, -5, 14, -14, 14, -14, 12, -9, 7, -7, 5), PackedVector2Array(-6, -2, -7, -3, -7, -7, -3, -10, 0, -10, 4, -7, 4, 2, 2, 2, 2, 5, 4, 6, 4, 8, 2, 9, 2, 10, 3, 11, 3, 13, 2, 14, 0, 14, -1, 13, -3, 13, -5, 14, -14, 14, -15, 12, -8, 6, -7, 4, -6, 3), PackedVector2Array(-6, -1, -7, -4, -7, -8, -3, -11, 0, -11, 4, -8, 4, 1, 2, 1, 2, 5, 2, 7, 1, 7, 1, 13, 0, 14, -5, 14, -14, 14, -14, 12, -9, 7, -7, 5)]
+}
+
+[sub_resource type="Animation" id="Animation_cpijx"]
+resource_name = "walk_up"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [126, 127, 128, 129]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -337,9 +345,10 @@ script = ExtResource("1_5etoj")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_6wrgp")
-hframes = 15
-vframes = 7
+texture = ExtResource("2_eq5c7")
+hframes = 18
+vframes = 10
+frame = 8
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-10, 5, -9, 3, -8, 1, -8, -10, -7, -11, 4, -11, 5, -10, 5, 1, 6, 3, 7, 5, 7, 13, -6, 13, -9, 11, -10, 8)
@@ -352,6 +361,5 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_ha73g")
 anim_player = NodePath("../AnimationPlayer")
-active = true
-parameters/Idle/blend_position = Vector2(0, 0)
+parameters/Idle/blend_position = Vector2(0, 0.1)
 parameters/Walk/blend_position = Vector2(0, 0)
