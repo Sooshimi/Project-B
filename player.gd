@@ -2,11 +2,16 @@ extends CharacterBody2D
 
 var speed := 75
 var input_direction : Vector2
-var is_moving : bool
 var is_attacking : bool
+var attack_direction : Vector2
+const polearm_load = preload("res://polearm.tscn")
 
 @onready var animation_tree := $AnimationTree
 @onready var attack_speed_timer := $AttackSpeedTimer
+@onready var weapon_point_right := $WeaponPointRight
+@onready var weapon_point_left := $WeaponPointLeft
+@onready var weapon_point_up := $WeaponPointUp
+@onready var weapon_point_down := $WeaponPointDown
 
 func _ready():
 	animation_tree.active = true
@@ -36,11 +41,34 @@ func get_input():
 		animation_tree.set("parameters/Walk/blend_position", input_direction)
 		animation_tree.set("parameters/Attack/blend_position", input_direction)
 	
-	# If attacking, travel to attack animation
 	if Input.is_action_just_pressed("attack"):
+		# When attacking, travel to attack animation
 		animation_tree.get("parameters/playback").travel("Attack")
+		
+		# Get attack facing direction
+		attack_direction = animation_tree.get("parameters/Walk/blend_position")
+		
+		# Instantiate weapon scene
+		var polearm = polearm_load.instantiate()
+		
+		# Weapon position and rotation based on facing direction
+		if attack_direction == Vector2(1,0):
+			polearm.position = weapon_point_right.position
+			polearm.rotation = weapon_point_right.rotation
+		elif attack_direction == Vector2(-1,0):
+			polearm.position = weapon_point_left.position
+			polearm.rotation = weapon_point_left.rotation
+		elif attack_direction == Vector2(0,-1):
+			polearm.position = weapon_point_up.position
+			polearm.rotation = weapon_point_up.rotation
+		elif attack_direction == Vector2(0,1):
+			polearm.position = weapon_point_down.position
+			polearm.rotation = weapon_point_down.rotation
+		
+		add_child(polearm)
 		
 		# Stop player movement until attack animation finishes
 		is_attacking = true
 		await animation_tree.animation_finished
 		is_attacking = false
+		polearm.queue_free()

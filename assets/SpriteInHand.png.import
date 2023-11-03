@@ -2,22 +2,22 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvrnk3e126k27"
-path="res://.godot/imported/redsamurai.png-86ddf4fdb93f56a1b9d7b699e5fcba5b.ctex"
+uid="uid://ddu7xqqxbtgrx"
+path="res://.godot/imported/SpriteInHand.png-4bf7f68a2ae55cbb60544b1dc66ea31d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/redsamurai.png"
-dest_files=["res://.godot/imported/redsamurai.png-86ddf4fdb93f56a1b9d7b699e5fcba5b.ctex"]
+source_file="res://assets/SpriteInHand.png"
+dest_files=["res://.godot/imported/SpriteInHand.png-4bf7f68a2ae55cbb60544b1dc66ea31d.ctex"]
 
 [params]
 
 compress/mode=0
 compress/high_quality=false
-compress/lossy_quality=1.0
+compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0

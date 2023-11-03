@@ -295,11 +295,9 @@ blend_point_0/pos = Vector2(0, 1)
 blend_point_1/node = SubResource("AnimationNodeAnimation_gk03k")
 blend_point_1/pos = Vector2(0, -1)
 blend_point_2/node = SubResource("AnimationNodeAnimation_dw24l")
-blend_point_2/pos = Vector2(-1.1, 0)
+blend_point_2/pos = Vector2(-1, 0)
 blend_point_3/node = SubResource("AnimationNodeAnimation_vbv8s")
-blend_point_3/pos = Vector2(1.1, 0)
-min_space = Vector2(-1.1, -1)
-max_space = Vector2(1.1, 1)
+blend_point_3/pos = Vector2(1, 0)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fpxwc"]
@@ -353,3 +351,18 @@ active = true
 parameters/Attack/blend_position = Vector2(2.08165e-12, 2.08165e-12)
 parameters/Idle/blend_position = Vector2(2.08165e-12, 2.08165e-12)
 parameters/Walk/blend_position = Vector2(2.08165e-12, 2.08165e-12)
+
+[node name="WeaponPointRight" type="Marker2D" parent="."]
+position = Vector2(8, 4)
+
+[node name="WeaponPointLeft" type="Marker2D" parent="."]
+position = Vector2(-8, 4)
+rotation = 3.14159
+
+[node name="WeaponPointUp" type="Marker2D" parent="."]
+position = Vector2(-4, -8)
+rotation = -1.5708
+
+[node name="WeaponPointDown" type="Marker2D" parent="."]
+position = Vector2(-4, 8)
+rotation = 1.5708
