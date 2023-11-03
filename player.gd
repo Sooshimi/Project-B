@@ -47,7 +47,7 @@ func get_input():
 		
 		# Get attack facing direction
 		attack_direction = fixed_vector(animation_tree.get("parameters/Walk/blend_position"))
-		print(attack_direction)
+		
 		# Instantiate weapon scene
 		var polearm = polearm_load.instantiate()
 		
