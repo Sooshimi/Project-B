@@ -81,7 +81,7 @@ func get_input():
 # As player moves diagonally, x and y blend values become floats between
 # -1 and 1, so the appropriate attack animations wouldn't be played.
 func fixed_vector(blend_position:Vector2) -> Vector2:
-	var rounded_x = int(round(blend_position.x))
-	var rounded_y = int(round(blend_position.y))
+	var rounded_x = round(blend_position.x)
+	var rounded_y = round(blend_position.y)
 	var vector := Vector2(rounded_x, rounded_y)
 	return vector
