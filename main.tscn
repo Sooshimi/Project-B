@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7opv071ngmua"]
+[gd_scene load_steps=6 format=3 uid="uid://b7opv071ngmua"]
 
 [ext_resource type="PackedScene" uid="uid://inplngiwhrep" path="res://player.tscn" id="1_d80rc"]
 [ext_resource type="Script" path="res://main.gd" id="1_dvs6a"]
 [ext_resource type="PackedScene" uid="uid://hxha8q48ymkh" path="res://map.tscn" id="2_m5wda"]
+[ext_resource type="PackedScene" uid="uid://dogp0wxakg6s6" path="res://enemy_1.tscn" id="4_s32je"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3uc3k"]
 size = Vector2(14, 0.5)
@@ -30,6 +31,9 @@ position = Vector2(96, -32)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnterBuilding2"]
 position = Vector2(-215, -119)
 shape = SubResource("RectangleShape2D_3uc3k")
+
+[node name="Enemy1" parent="." instance=ExtResource("4_s32je")]
+position = Vector2(-278, -82)
 
 [connection signal="body_entered" from="EnterBuilding1" to="." method="_on_enter_building_1_body_entered"]
 [connection signal="body_entered" from="EnterBuilding2" to="." method="_on_enter_building_2_body_entered"]
