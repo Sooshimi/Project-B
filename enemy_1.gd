@@ -32,6 +32,6 @@ func _process(delta):
 		# If enemy moving, travel to walk animation
 		# Set blend positions (directions) of animations based on velocity
 		animation_tree.get("parameters/playback").travel("Walk")
-		animation_tree.set("parameters/Idle/blend_position", velocity)
-		animation_tree.set("parameters/Walk/blend_position", velocity)
-		animation_tree.set("parameters/Attack/blend_position", velocity)
+		animation_tree.set("parameters/Idle/blend_position", relative_direction)
+		animation_tree.set("parameters/Walk/blend_position", relative_direction)
+		animation_tree.set("parameters/Attack/blend_position", relative_direction)
