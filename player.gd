@@ -46,7 +46,7 @@ func get_input():
 		animation_tree.get("parameters/playback").travel("Attack")
 		
 		# Get attack facing direction
-		attack_direction = fixed_vector(animation_tree.get("parameters/Walk/blend_position"))
+		attack_direction = round_vector(animation_tree.get("parameters/Walk/blend_position"))
 		
 		# Instantiate weapon scene
 		var polearm = polearm_load.instantiate()
@@ -80,8 +80,8 @@ func get_input():
 # Function to round blend position axis values to nearest integers.
 # As player moves diagonally, x and y blend values become floats between
 # -1 and 1, so the appropriate attack animations wouldn't be played.
-func fixed_vector(blend_position:Vector2) -> Vector2:
-	var rounded_x = round(blend_position.x)
-	var rounded_y = round(blend_position.y)
+func round_vector(blend_position:Vector2) -> Vector2:
+	var rounded_x : float = round(blend_position.x)
+	var rounded_y : float = round(blend_position.y)
 	var vector := Vector2(rounded_x, rounded_y)
 	return vector
