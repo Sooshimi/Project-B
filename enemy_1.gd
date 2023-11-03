@@ -30,7 +30,7 @@ func _process(delta):
 		animation_tree.get("parameters/playback").travel("Idle")
 	else:
 		# If enemy moving, travel to walk animation
-		# Set blend positions (directions) of animations based on velocity
+		# Set blend positions (directions) of animations based on relative direction
 		animation_tree.get("parameters/playback").travel("Walk")
 		animation_tree.set("parameters/Idle/blend_position", relative_direction)
 		animation_tree.set("parameters/Walk/blend_position", relative_direction)
