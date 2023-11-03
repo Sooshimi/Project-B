@@ -3,6 +3,7 @@ extends Node2D
 @export var player_scene : PackedScene
 
 func _ready():
+	# Spawns player in the middle of the map on first game launch
 	if Global.start_game:
 		var player := player_scene.instantiate()
 		add_child(player)

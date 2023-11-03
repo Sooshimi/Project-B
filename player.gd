@@ -78,8 +78,8 @@ func get_input():
 		polearm.queue_free()
 
 # Function to round blend position axis values to nearest integers.
-# As player moves diagonally, x and y blend values become floats, so
-# the appropriate attack animations wouldn't be played.
+# As player moves diagonally, x and y blend values become floats between
+# -1 and 1, so the appropriate attack animations wouldn't be played.
 func fixed_vector(blend_position:Vector2) -> Vector2:
 	var rounded_x = int(round(blend_position.x))
 	var rounded_y = int(round(blend_position.y))
