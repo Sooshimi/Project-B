@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dogp0wxakg6s6"]
+
+[ext_resource type="Texture2D" uid="uid://c7nwsx3pr1fd4" path="res://assets/Lizard.png" id="1_ptsh6"]
+
+[node name="Enemy1" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ptsh6")
+hframes = 4
+vframes = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-6, 3, -4, -3, -3, -5, -1, -7, 1, -7, 2, -6, 2, -5, 1, -4, 0, -2, 5, -2, 6, -1, 6, 4, 4, 6, 4, 8, -4, 8, -4, 6, -6, 6)
