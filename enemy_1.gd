@@ -1,11 +1,13 @@
 extends CharacterBody2D
 
-const speed := 40
+const speed := 35
 var relative_direction : Vector2
 var chase := false
 
+@onready var animation_tree := $AnimationTree
+
 func _ready():
-	pass
+	animation_tree.active = true
 
 func _process(delta):
 	var player = Global.get_scene().get_node("Player")
@@ -22,3 +24,14 @@ func _process(delta):
 		# Sets velocity which changes based on relative direction
 		velocity = Vector2(relative_direction * speed)
 		move_and_slide()
+	
+	# If enemy not moving, travel to idle animation
+	if velocity == Vector2.ZERO:
+		animation_tree.get("parameters/playback").travel("Idle")
+	else:
+		# If enemy moving, travel to walk animation
+		# Set blend positions (directions) of animations based on velocity
+		animation_tree.get("parameters/playback").travel("Walk")
+		animation_tree.set("parameters/Idle/blend_position", velocity)
+		animation_tree.set("parameters/Walk/blend_position", velocity)
+		animation_tree.set("parameters/Attack/blend_position", velocity)
