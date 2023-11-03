@@ -7,7 +7,6 @@ var attack_direction : Vector2
 const polearm_load = preload("res://polearm.tscn")
 
 @onready var animation_tree := $AnimationTree
-@onready var attack_speed_timer := $AttackSpeedTimer
 @onready var weapon_point_right := $WeaponPointRight
 @onready var weapon_point_left := $WeaponPointLeft
 @onready var weapon_point_up := $WeaponPointUp
