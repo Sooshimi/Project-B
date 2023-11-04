@@ -332,11 +332,13 @@ states/Walk/node = SubResource("AnimationNodeBlendSpace2D_aresa")
 states/Walk/position = Vector2(499.5, 82)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_5q1cp"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_tota3"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_e6vnu")]
 
-[node name="Enemy1" type="CharacterBody2D" node_paths=PackedStringArray("animation_tree")]
+[node name="Enemy1" type="CharacterBody2D" node_paths=PackedStringArray("animation_tree", "hit_cooldown_timer", "stop_movement_timer")]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_bqjr0")
 animation_tree = NodePath("AnimationTree")
+hit_cooldown_timer = NodePath("HitCooldownTimer")
+stop_movement_timer = NodePath("StopMovementTimer")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_ptsh6")
@@ -356,3 +358,11 @@ tree_root = SubResource("AnimationNodeStateMachine_qe0cj")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Idle/blend_position = Vector2(0, 0)
 parameters/Walk/blend_position = Vector2(0, 0)
+
+[node name="HitCooldownTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="StopMovementTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true

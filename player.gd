@@ -15,6 +15,7 @@ var collision
 @export var weapon_point_left : Node
 @export var weapon_point_up : Node
 @export var weapon_point_down : Node
+@export var collision_polygon : Node
 
 func _ready():
 	animation_tree.active = true
@@ -34,6 +35,10 @@ func _physics_process(delta):
 	
 	# Quickly return knockback value to 0 after knockback
 	knockback = lerp(knockback, Vector2.ZERO, 0.1)
+	
+	# Player death on 0 hp
+	if Global.player_hp == 0:
+		died()
 
 func get_input():
 	# Enable player movement if not attacking
@@ -46,7 +51,7 @@ func get_input():
 	else:
 		# Else stop player movement when attacking
 		velocity = Vector2.ZERO
-
+	
 func play_move_animations():
 	# If player not moving, travel to idle animation
 	if input_direction == Vector2.ZERO:
@@ -107,3 +112,7 @@ func round_vector(blend_position:Vector2) -> Vector2:
 	var rounded_y : float = round(blend_position.y)
 	var vector := Vector2(rounded_x, rounded_y)
 	return vector
+
+func died():
+	hide()
+	collision_polygon.disabled = true

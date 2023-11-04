@@ -3,7 +3,7 @@ extends Node
 var current_scene = null
 var player = null
 var start_game := true
-var remaining_player_hp = null
+var player_hp := 3
 
 func _ready():
 	get_scene()
@@ -38,3 +38,6 @@ func _deferred_add_player_to_scene(path:String, position:Vector2):
 	player = load_player.instantiate()
 	get_scene().add_child(player)
 	player.position = position
+
+func add_to_player_hp(amount:int):
+	player_hp += amount
