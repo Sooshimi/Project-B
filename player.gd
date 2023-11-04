@@ -21,18 +21,25 @@ func _ready():
 	is_attacking = false
 
 func _physics_process(delta):
+	# move_and_collide() used instead of move_and_slide() as we do not want
+	# multiple collision detection
 	collision = move_and_collide(velocity * delta)
 	get_input()
 	
 	if collision:
+		# Allows player to slide on walls
 		velocity = velocity.slide(collision.get_normal())
 	
+	# Quickly return knockback value to 0 after knockback
 	knockback = lerp(knockback, Vector2.ZERO, 0.1)
 
 func get_input():
 	# Enable player movement if not attacking
 	if !is_attacking && is_visible_in_tree():
 		input_direction = Input.get_vector("left", "right", "up", "down")
+		
+		# Knockback updated in enemy script, as move_and_collide() collision
+		# detection only detects when player is moving
 		velocity = (input_direction * speed) + knockback
 	else:
 		# Else stop player movement when attacking

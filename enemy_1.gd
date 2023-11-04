@@ -30,9 +30,13 @@ func _process(delta):
 	collision = move_and_collide(velocity * delta)
 	
 	if collision:
+		# Allows enemy to slide on walls
 		velocity = velocity.slide(collision.get_normal())
 		
 		if "Player" in collision.get_collider().name:
+			# Sets the player's knockback value (which adds onto its velocity)
+			# to the relative_direction vector of the enemy, so the player
+			# is knocked back the same direction the enemy is going
 			collision.get_collider().knockback = relative_direction * knockback_strength
 	
 	# If enemy not moving, travel to idle animation
