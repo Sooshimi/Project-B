@@ -25,6 +25,8 @@ func _physics_process(delta):
 	# multiple collision detection
 	collision = move_and_collide(velocity * delta)
 	get_input()
+	play_move_animations()
+	play_attack_animations()
 	
 	if collision:
 		# Allows player to slide on walls
@@ -44,7 +46,8 @@ func get_input():
 	else:
 		# Else stop player movement when attacking
 		velocity = Vector2.ZERO
-	
+
+func play_move_animations():
 	# If player not moving, travel to idle animation
 	if input_direction == Vector2.ZERO:
 		animation_tree.get("parameters/playback").travel("Idle")
@@ -55,7 +58,8 @@ func get_input():
 		animation_tree.set("parameters/Idle/blend_position", input_direction)
 		animation_tree.set("parameters/Walk/blend_position", input_direction)
 		animation_tree.set("parameters/Attack/blend_position", input_direction)
-	
+
+func play_attack_animations():
 	if Input.is_action_just_pressed("attack") && is_visible_in_tree():
 		# Bool to stop player movement when attacking
 		is_attacking = true
