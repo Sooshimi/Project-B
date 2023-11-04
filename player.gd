@@ -4,6 +4,10 @@ var speed := 75
 var input_direction : Vector2
 var is_attacking : bool
 var attack_direction : Vector2
+var knockback := Vector2.ZERO
+var enemy_collision : bool
+var enemy_relative_direction : Vector2
+var collision
 
 @export var weapon_scene : PackedScene
 @export var animation_tree : Node
@@ -17,28 +21,25 @@ func _ready():
 	is_attacking = false
 
 func _physics_process(delta):
+	collision = move_and_collide(velocity * delta)
 	get_input()
-	move_and_slide()
-	kill_player_on_collision("Enemy")
-
-func kill_player_on_collision(name:String):
-	for i in get_slide_collision_count():
-		var collision = get_slide_collision(i)
-		if collision:
-			if name in collision.get_collider().name:
-				hide()
+	
+	if collision:
+		velocity = velocity.slide(collision.get_normal())
+	
+	knockback = lerp(knockback, Vector2.ZERO, 0.1)
 
 func get_input():
 	# Enable player movement if not attacking
 	if !is_attacking && is_visible_in_tree():
 		input_direction = Input.get_vector("left", "right", "up", "down")
-		velocity = input_direction * speed
+		velocity = (input_direction * speed) + knockback
 	else:
 		# Else stop player movement when attacking
 		velocity = Vector2.ZERO
 	
 	# If player not moving, travel to idle animation
-	if velocity == Vector2.ZERO:
+	if input_direction == Vector2.ZERO:
 		animation_tree.get("parameters/playback").travel("Idle")
 	else:
 		# If player moving, travel to walk animation
