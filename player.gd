@@ -22,10 +22,11 @@ func _physics_process(delta):
 	kill_player_on_collision("Enemy")
 
 func kill_player_on_collision(name:String):
-	var collision = get_slide_collision(0)
-	if collision:
-		if name in collision.get_collider().name:
-			hide()
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		if collision:
+			if name in collision.get_collider().name:
+				hide()
 
 func get_input():
 	# Enable player movement if not attacking
