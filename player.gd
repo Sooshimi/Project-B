@@ -19,10 +19,17 @@ func _ready():
 func _physics_process(delta):
 	get_input()
 	move_and_slide()
+	kill_player_on_collision("Enemy")
+
+func kill_player_on_collision(name:String):
+	var collision = get_slide_collision(0)
+	if collision:
+		if name in collision.get_collider().name:
+			hide()
 
 func get_input():
 	# Enable player movement if not attacking
-	if !is_attacking:
+	if !is_attacking && is_visible_in_tree():
 		input_direction = Input.get_vector("left", "right", "up", "down")
 		velocity = input_direction * speed
 	else:
@@ -40,7 +47,10 @@ func get_input():
 		animation_tree.set("parameters/Walk/blend_position", input_direction)
 		animation_tree.set("parameters/Attack/blend_position", input_direction)
 	
-	if Input.is_action_just_pressed("attack"):
+	if Input.is_action_just_pressed("attack") && is_visible_in_tree():
+		# Bool to stop player movement when attacking
+		is_attacking = true
+		
 		# When attacking, travel to attack animation
 		animation_tree.get("parameters/playback").travel("Attack")
 		
@@ -70,8 +80,8 @@ func get_input():
 		
 		add_child(weapon)
 		
-		# Stop player movement until attack animation finishes
-		is_attacking = true
+		# Wait for attack animation to finish before allowing player to
+		# move again, and removing weapon
 		await animation_tree.animation_finished
 		is_attacking = false
 		weapon.queue_free()
