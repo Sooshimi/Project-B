@@ -4,13 +4,13 @@ var speed := 75
 var input_direction : Vector2
 var is_attacking : bool
 var attack_direction : Vector2
-const polearm_load = preload("res://polearm.tscn")
 
-@onready var animation_tree := $AnimationTree
-@onready var weapon_point_right := $WeaponPointRight
-@onready var weapon_point_left := $WeaponPointLeft
-@onready var weapon_point_up := $WeaponPointUp
-@onready var weapon_point_down := $WeaponPointDown
+@export var weapon_scene : PackedScene
+@export var animation_tree : Node
+@export var weapon_point_right : Node
+@export var weapon_point_left : Node
+@export var weapon_point_up : Node
+@export var weapon_point_down : Node
 
 func _ready():
 	animation_tree.active = true
@@ -48,33 +48,33 @@ func get_input():
 		attack_direction = round_vector(animation_tree.get("parameters/Walk/blend_position"))
 		
 		# Instantiate weapon scene
-		var polearm = polearm_load.instantiate()
+		var weapon = weapon_scene.instantiate()
 		
 		# Set weapon position and rotation based on facing direction.
 		if attack_direction == Vector2(1,0) ||\
 			attack_direction == Vector2(1,-1) ||\
 			attack_direction == Vector2(1,1):
-			polearm.position = weapon_point_right.position
-			polearm.rotation = weapon_point_right.rotation
+			weapon.position = weapon_point_right.position
+			weapon.rotation = weapon_point_right.rotation
 		elif attack_direction == Vector2(-1,0) ||\
 			attack_direction == Vector2(-1,-1) ||\
 			attack_direction == Vector2(-1,1):
-			polearm.position = weapon_point_left.position
-			polearm.rotation = weapon_point_left.rotation
+			weapon.position = weapon_point_left.position
+			weapon.rotation = weapon_point_left.rotation
 		elif attack_direction == Vector2(0,-1):
-			polearm.position = weapon_point_up.position
-			polearm.rotation = weapon_point_up.rotation
+			weapon.position = weapon_point_up.position
+			weapon.rotation = weapon_point_up.rotation
 		else:
-			polearm.position = weapon_point_down.position
-			polearm.rotation = weapon_point_down.rotation
+			weapon.position = weapon_point_down.position
+			weapon.rotation = weapon_point_down.rotation
 		
-		add_child(polearm)
+		add_child(weapon)
 		
 		# Stop player movement until attack animation finishes
 		is_attacking = true
 		await animation_tree.animation_finished
 		is_attacking = false
-		polearm.queue_free()
+		weapon.queue_free()
 
 # Function to round blend position axis values to nearest integers.
 # As player moves diagonally, x and y blend values become floats between

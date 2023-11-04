@@ -1,13 +1,14 @@
 extends Node2D
 
 @export var player_scene : PackedScene
+@export var player_start_position : Node
 
 func _ready():
 	# Spawns player in the middle of the map on first game launch
 	if Global.start_game:
 		var player := player_scene.instantiate()
 		add_child(player)
-		player.global_position = $PlayerStartPosition.global_position
+		player.global_position = player_start_position.global_position
 		Global.start_game = false
 
 func _process(delta):

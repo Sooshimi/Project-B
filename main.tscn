@@ -8,10 +8,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3uc3k"]
 size = Vector2(14, 0.5)
 
-[node name="main" type="Node2D"]
+[node name="main" type="Node2D" node_paths=PackedStringArray("player_start_position")]
 position = Vector2(335, 202)
 script = ExtResource("1_dvs6a")
 player_scene = ExtResource("1_d80rc")
+player_start_position = NodePath("PlayerStartPosition")
 
 [node name="Map" parent="." instance=ExtResource("2_m5wda")]
 position = Vector2(-335, -202)

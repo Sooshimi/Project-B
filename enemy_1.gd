@@ -4,7 +4,7 @@ const speed := 35
 var relative_direction : Vector2
 var chase := false
 
-@onready var animation_tree := $AnimationTree
+@export var animation_tree : Node
 
 func _ready():
 	animation_tree.active = true
