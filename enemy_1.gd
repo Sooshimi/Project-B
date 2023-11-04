@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const speed := 35
+var speed := 35
 var relative_direction : Vector2
 var chase := false
 
@@ -19,11 +19,13 @@ func _process(delta):
 	# Sets chase condition if player is within range
 	if position.distance_to(player.position) < 60:
 		chase = true
-
+	
 	if chase:
 		# Sets velocity which changes based on relative direction
 		velocity = Vector2(relative_direction * speed)
-		move_and_slide()
+	
+	move_and_slide()
+	stop_on_player_collision()
 	
 	# If enemy not moving, travel to idle animation
 	if velocity == Vector2.ZERO:
@@ -35,3 +37,10 @@ func _process(delta):
 		animation_tree.set("parameters/Idle/blend_position", relative_direction)
 		animation_tree.set("parameters/Walk/blend_position", relative_direction)
 		animation_tree.set("parameters/Attack/blend_position", relative_direction)
+
+# Stops enemy movement when it collides with the player
+func stop_on_player_collision():
+	var collision := get_slide_collision(0)
+	if collision:
+		if "Player" in collision.get_collider().name:
+			speed = 0
