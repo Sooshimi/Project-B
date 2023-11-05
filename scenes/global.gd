@@ -4,6 +4,7 @@ var current_scene = null
 var player = null
 var start_game := true
 var player_hp := 3
+var max_player_hp := 3
 var ui = null
 
 func _ready():
@@ -53,5 +54,6 @@ func damage_player(amount:int):
 	get_scene().get_node("UI").minus_hearts(amount)
 
 func heal_player(amount:int):
-	player_hp += amount
-	get_scene().get_node("UI").plus_hearts(amount)
+	if player_hp < max_player_hp:
+		player_hp += amount
+		get_scene().get_node("UI").plus_hearts(amount)

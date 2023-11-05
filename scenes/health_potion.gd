@@ -7,5 +7,6 @@ func _process(delta):
 	pass
 
 func _on_body_entered(body):
-	Global.heal_player(1)
-	queue_free()
+	if Global.player_hp < Global.max_player_hp:
+		Global.heal_player(1)
+		queue_free()

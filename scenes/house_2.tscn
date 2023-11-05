@@ -20,13 +20,13 @@ script = ExtResource("1_bq1fx")
 position = Vector2(72, 157)
 shape = SubResource("RectangleShape2D_hatc5")
 
+[node name="HealthPotion" parent="." instance=ExtResource("4_llkcf")]
+position = Vector2(178, 82)
+
 [node name="NPC1" parent="." instance=ExtResource("5_hiftj")]
-position = Vector2(162, 90)
+position = Vector2(128, 103)
 
 [node name="Player" parent="." instance=ExtResource("3_6a65q")]
 position = Vector2(72, 148)
-
-[node name="HealthPotion" parent="." instance=ExtResource("4_llkcf")]
-position = Vector2(162, 123)
 
 [connection signal="body_entered" from="indoor_2/ExitBuilding2" to="." method="_on_exit_building_2_body_entered"]
