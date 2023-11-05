@@ -1,8 +1,6 @@
-[gd_scene load_steps=41 format=3 uid="uid://inplngiwhrep"]
+[gd_scene load_steps=39 format=3 uid="uid://i6wdyq62x1fe"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_5etoj"]
-[ext_resource type="Texture2D" uid="uid://cvrnk3e126k27" path="res://assets/redsamurai.png" id="1_quy3s"]
-[ext_resource type="PackedScene" uid="uid://djqn7kgvgpwin" path="res://polearm.tscn" id="2_7en3s"]
+[ext_resource type="Texture2D" uid="uid://bpie2b8jjy3mi" path="res://assets/CaveGirl.png" id="1_jb0cw"]
 
 [sub_resource type="Animation" id="Animation_n2s2e"]
 length = 0.001
@@ -331,20 +329,12 @@ states/Walk/position = Vector2(506, 99.375)
 transitions = ["Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_fpxwc"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_dmmvm"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_xg60j"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_wi3gd"), "Walk", "Attack", SubResource("AnimationNodeStateMachineTransition_cq5r2"), "Attack", "Walk", SubResource("AnimationNodeStateMachineTransition_smpgu"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_5i54e")]
 graph_offset = Vector2(17.7822, -86.085)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animation_tree", "weapon_point_right", "weapon_point_left", "weapon_point_up", "weapon_point_down", "collision_polygon")]
-collision_mask = 15
-script = ExtResource("1_5etoj")
-weapon_scene = ExtResource("2_7en3s")
-animation_tree = NodePath("AnimationTree")
-weapon_point_right = NodePath("WeaponPointRight")
-weapon_point_left = NodePath("WeaponPointLeft")
-weapon_point_up = NodePath("WeaponPointUp")
-weapon_point_down = NodePath("WeaponPointDown")
-collision_polygon = NodePath("CollisionPolygon2D")
+[node name="NPC1" type="CharacterBody2D"]
+collision_mask = 7
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_quy3s")
+texture = ExtResource("1_jb0cw")
 hframes = 4
 vframes = 7
 
@@ -363,18 +353,3 @@ active = true
 parameters/Attack/blend_position = Vector2(2.08165e-12, 1)
 parameters/Idle/blend_position = Vector2(2.08165e-12, 2.08165e-12)
 parameters/Walk/blend_position = Vector2(2.08165e-12, 2.08165e-12)
-
-[node name="WeaponPointRight" type="Marker2D" parent="."]
-position = Vector2(8, 4)
-
-[node name="WeaponPointLeft" type="Marker2D" parent="."]
-position = Vector2(-8, 4)
-rotation = 3.14159
-
-[node name="WeaponPointUp" type="Marker2D" parent="."]
-position = Vector2(-4, -8)
-rotation = -1.5708
-
-[node name="WeaponPointDown" type="Marker2D" parent="."]
-position = Vector2(-4, 8)
-rotation = 1.5708

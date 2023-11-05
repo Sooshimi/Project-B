@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7rrhvimte0kn"]
+[gd_scene load_steps=7 format=3 uid="uid://c7rrhvimte0kn"]
 
 [ext_resource type="Script" path="res://house_2.gd" id="1_bq1fx"]
 [ext_resource type="PackedScene" uid="uid://bk3k3075wlpho" path="res://indoor_2.tscn" id="2_ym8sp"]
 [ext_resource type="PackedScene" uid="uid://inplngiwhrep" path="res://player.tscn" id="3_6a65q"]
 [ext_resource type="PackedScene" uid="uid://ddtqf6il86o8e" path="res://health_potion.tscn" id="4_llkcf"]
+[ext_resource type="PackedScene" uid="uid://i6wdyq62x1fe" path="res://npc_1.tscn" id="5_hiftj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hatc5"]
 size = Vector2(18, 1)
@@ -19,10 +20,13 @@ script = ExtResource("1_bq1fx")
 position = Vector2(72, 157)
 shape = SubResource("RectangleShape2D_hatc5")
 
+[node name="NPC1" parent="." instance=ExtResource("5_hiftj")]
+position = Vector2(162, 90)
+
 [node name="Player" parent="." instance=ExtResource("3_6a65q")]
 position = Vector2(72, 148)
 
 [node name="HealthPotion" parent="." instance=ExtResource("4_llkcf")]
-position = Vector2(172, 102)
+position = Vector2(162, 123)
 
 [connection signal="body_entered" from="indoor_2/ExitBuilding2" to="." method="_on_exit_building_2_body_entered"]
