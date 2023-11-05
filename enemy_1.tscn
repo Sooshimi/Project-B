@@ -1,7 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://dogp0wxakg6s6"]
+[gd_scene load_steps=28 format=3 uid="uid://dogp0wxakg6s6"]
 
 [ext_resource type="Script" path="res://enemy_1.gd" id="1_bqjr0"]
 [ext_resource type="Texture2D" uid="uid://c7nwsx3pr1fd4" path="res://assets/Lizard.png" id="1_ptsh6"]
+[ext_resource type="PackedScene" uid="uid://4fo7dxs1dqa7" path="res://ui.tscn" id="2_f3nuq"]
 
 [sub_resource type="Animation" id="Animation_mboab"]
 length = 0.001
@@ -339,6 +340,7 @@ script = ExtResource("1_bqjr0")
 animation_tree = NodePath("AnimationTree")
 hit_cooldown_timer = NodePath("HitCooldownTimer")
 stop_movement_timer = NodePath("StopMovementTimer")
+ui = ExtResource("2_f3nuq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_ptsh6")

@@ -8,11 +8,10 @@ var knockback_strength := 250
 var collision
 var player : Node
 
-signal hit_player
-
 @export var animation_tree : Node
 @export var hit_cooldown_timer : Node
 @export var stop_movement_timer : Node
+@export var ui : PackedScene
 
 func _ready():
 	animation_tree.active = true
@@ -31,7 +30,7 @@ func _process(delta):
 		velocity = velocity.slide(collision.get_normal())
 		
 		# Knockback player on collision
-		knockback_player()
+		hit_player()
 	
 	play_move_animations()
 	
@@ -66,7 +65,7 @@ func play_move_animations():
 		animation_tree.set("parameters/Walk/blend_position", relative_direction)
 		animation_tree.set("parameters/Attack/blend_position", relative_direction)
 
-func knockback_player():
+func hit_player():
 	if "Player" in collision.get_collider().name && hit_cooldown_timer.is_stopped():
 		# Stop enemy from moving for a short time after hitting the player
 		speed = 0
@@ -78,4 +77,4 @@ func knockback_player():
 		# to the relative_direction vector of the enemy, so the player
 		# is knocked back the same direction the enemy is going
 		collision.get_collider().knockback = relative_direction * knockback_strength
-		Global.add_to_player_hp(-1)
+		Global.damage_player(1)

@@ -4,6 +4,7 @@ var current_scene = null
 var player = null
 var start_game := true
 var player_hp := 3
+var ui = null
 
 func _ready():
 	get_scene()
@@ -39,5 +40,14 @@ func _deferred_add_player_to_scene(path:String, position:Vector2):
 	get_scene().add_child(player)
 	player.position = position
 
-func add_to_player_hp(amount:int):
-	player_hp += amount
+func add_ui_to_scene(path:String):
+	call_deferred("_deferred_add_ui_to_scene", path)
+
+func _deferred_add_ui_to_scene(path:String):
+	var load_ui = ResourceLoader.load(path)
+	ui = load_ui.instantiate()
+	get_scene().add_child(ui)
+
+func damage_player(amount:int):
+	player_hp -= amount
+	get_scene().get_node("UI").update_hearts(amount)
