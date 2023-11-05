@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://djqn7kgvgpwin"]
 
-[ext_resource type="Texture2D" uid="uid://ddu7xqqxbtgrx" path="res://assets/SpriteInHand.png" id="1_akb8t"]
-[ext_resource type="Script" path="res://polearm.gd" id="1_tndox"]
+[ext_resource type="Texture2D" uid="uid://ddu7xqqxbtgrx" path="res://assets/items/weapons/SpriteInHand.png" id="1_akb8t"]
+[ext_resource type="Script" path="res://scenes/polearm.gd" id="1_tndox"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lpkw8"]
 size = Vector2(8, 6)

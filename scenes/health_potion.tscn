@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ddtqf6il86o8e"]
 
-[ext_resource type="Script" path="res://health_potion.gd" id="1_luccu"]
-[ext_resource type="Texture2D" uid="uid://1lrhb28mya6g" path="res://assets/LifePot.png" id="1_tgira"]
+[ext_resource type="Script" path="res://scenes/health_potion.gd" id="1_luccu"]
+[ext_resource type="Texture2D" uid="uid://1lrhb28mya6g" path="res://assets/items/LifePot.png" id="1_tgira"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_16jfm"]
 size = Vector2(8, 10)

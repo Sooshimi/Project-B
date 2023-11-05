@@ -2,22 +2,22 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvrnk3e126k27"
-path="res://.godot/imported/redsamurai.png-86ddf4fdb93f56a1b9d7b699e5fcba5b.ctex"
+uid="uid://dgowswbg6h0po"
+path="res://.godot/imported/TilesetInteriorFloor.png-25b3121976189bc0b4f78883801c65de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/redsamurai.png"
-dest_files=["res://.godot/imported/redsamurai.png-86ddf4fdb93f56a1b9d7b699e5fcba5b.ctex"]
+source_file="res://assets/world/TilesetInteriorFloor.png"
+dest_files=["res://.godot/imported/TilesetInteriorFloor.png-25b3121976189bc0b4f78883801c65de.ctex"]
 
 [params]
 
 compress/mode=0
 compress/high_quality=false
-compress/lossy_quality=1.0
+compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0

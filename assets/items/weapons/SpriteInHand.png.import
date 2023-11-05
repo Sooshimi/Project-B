@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1lrhb28mya6g"
-path="res://.godot/imported/LifePot.png-ab9ecde9a6dd2b5afc45f40296dcdad3.ctex"
+uid="uid://ddu7xqqxbtgrx"
+path="res://.godot/imported/SpriteInHand.png-0ba21adc1904ab0c2405022ea9bc484d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/LifePot.png"
-dest_files=["res://.godot/imported/LifePot.png-ab9ecde9a6dd2b5afc45f40296dcdad3.ctex"]
+source_file="res://assets/items/weapons/SpriteInHand.png"
+dest_files=["res://.godot/imported/SpriteInHand.png-0ba21adc1904ab0c2405022ea9bc484d.ctex"]
 
 [params]
 

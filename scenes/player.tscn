@@ -1,8 +1,8 @@
 [gd_scene load_steps=41 format=3 uid="uid://inplngiwhrep"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_5etoj"]
-[ext_resource type="Texture2D" uid="uid://cvrnk3e126k27" path="res://assets/redsamurai.png" id="1_quy3s"]
-[ext_resource type="PackedScene" uid="uid://djqn7kgvgpwin" path="res://polearm.tscn" id="2_7en3s"]
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_5etoj"]
+[ext_resource type="Texture2D" uid="uid://cvrnk3e126k27" path="res://assets/characters/redsamurai.png" id="1_quy3s"]
+[ext_resource type="PackedScene" uid="uid://djqn7kgvgpwin" path="res://scenes/polearm.tscn" id="2_7en3s"]
 
 [sub_resource type="Animation" id="Animation_n2s2e"]
 length = 0.001

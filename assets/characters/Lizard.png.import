@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfkjpegksqcva"
-path="res://.godot/imported/TilesetFloor.png-b89e6f9fbca82a22485d438474cc0109.ctex"
+uid="uid://c7nwsx3pr1fd4"
+path="res://.godot/imported/Lizard.png-f68f49e10a7e3a4d1ae22ea4b168dd77.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TilesetFloor.png"
-dest_files=["res://.godot/imported/TilesetFloor.png-b89e6f9fbca82a22485d438474cc0109.ctex"]
+source_file="res://assets/characters/Lizard.png"
+dest_files=["res://.godot/imported/Lizard.png-f68f49e10a7e3a4d1ae22ea4b168dd77.ctex"]
 
 [params]
 

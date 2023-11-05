@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://4fo7dxs1dqa7"]
 
-[ext_resource type="Script" path="res://ui.gd" id="1_df8w3"]
-[ext_resource type="PackedScene" uid="uid://bnf5c6h2xfl5q" path="res://heart.tscn" id="1_n4g81"]
+[ext_resource type="Script" path="res://scenes/ui.gd" id="1_df8w3"]
+[ext_resource type="PackedScene" uid="uid://bnf5c6h2xfl5q" path="res://scenes/heart.tscn" id="1_n4g81"]
 
 [node name="UI" type="CanvasLayer" node_paths=PackedStringArray("heart_container")]
 script = ExtResource("1_df8w3")

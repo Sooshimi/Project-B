@@ -1,6 +1,6 @@
 [gd_scene load_steps=39 format=3 uid="uid://i6wdyq62x1fe"]
 
-[ext_resource type="Texture2D" uid="uid://bpie2b8jjy3mi" path="res://assets/CaveGirl.png" id="1_jb0cw"]
+[ext_resource type="Texture2D" uid="uid://bpie2b8jjy3mi" path="res://assets/characters/CaveGirl.png" id="1_jb0cw"]
 
 [sub_resource type="Animation" id="Animation_n2s2e"]
 length = 0.001

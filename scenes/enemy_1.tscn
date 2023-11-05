@@ -1,8 +1,8 @@
 [gd_scene load_steps=28 format=3 uid="uid://dogp0wxakg6s6"]
 
-[ext_resource type="Script" path="res://enemy_1.gd" id="1_bqjr0"]
-[ext_resource type="Texture2D" uid="uid://c7nwsx3pr1fd4" path="res://assets/Lizard.png" id="1_ptsh6"]
-[ext_resource type="PackedScene" uid="uid://4fo7dxs1dqa7" path="res://ui.tscn" id="2_f3nuq"]
+[ext_resource type="Script" path="res://scenes/enemy_1.gd" id="1_bqjr0"]
+[ext_resource type="Texture2D" uid="uid://c7nwsx3pr1fd4" path="res://assets/characters/Lizard.png" id="1_ptsh6"]
+[ext_resource type="PackedScene" uid="uid://4fo7dxs1dqa7" path="res://scenes/ui.tscn" id="2_f3nuq"]
 
 [sub_resource type="Animation" id="Animation_mboab"]
 length = 0.001
