@@ -332,7 +332,7 @@ transitions = ["Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_
 graph_offset = Vector2(17.7822, -86.085)
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animation_tree", "weapon_point_right", "weapon_point_left", "weapon_point_up", "weapon_point_down", "collision_polygon")]
-collision_mask = 6
+collision_mask = 14
 script = ExtResource("1_5etoj")
 weapon_scene = ExtResource("2_7en3s")
 animation_tree = NodePath("AnimationTree")

@@ -50,4 +50,8 @@ func _deferred_add_ui_to_scene(path:String):
 
 func damage_player(amount:int):
 	player_hp -= amount
-	get_scene().get_node("UI").update_hearts(amount)
+	get_scene().get_node("UI").minus_hearts(amount)
+
+func heal_player(amount:int):
+	player_hp += amount
+	get_scene().get_node("UI").plus_hearts(amount)

@@ -23,6 +23,7 @@ Global="*res://global.gd"
 
 window/size/viewport_width=256
 window/size/viewport_height=224
+window/size/mode=3
 window/size/always_on_top=true
 window/size/window_width_override=768
 window/size/window_height_override=672
@@ -66,9 +67,11 @@ attack={
 2d_render/layer_1="player"
 2d_render/layer_2="enemy"
 2d_render/layer_3="wall"
+2d_render/layer_4="item"
 2d_physics/layer_1="player"
 2d_physics/layer_2="wall"
 2d_physics/layer_3="enemy"
+2d_physics/layer_4="item"
 
 [rendering]
 

@@ -15,7 +15,12 @@ func _ready():
 func _process(delta):
 	pass
 
-func update_hearts(amount:int):
+func minus_hearts(amount:int):
 	for i in range(amount):
 		var last_child = heart_container.get_child_count() - 1
 		heart_container.remove_child(heart_container.get_child(last_child))
+
+func plus_hearts(amount:int):
+	for i in range(amount):
+		heart = heart_scene.instantiate()
+		heart_container.add_child(heart)
