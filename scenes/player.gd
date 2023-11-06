@@ -116,7 +116,6 @@ func play_attack_animations():
 		# move again, and removing weapon
 		await animation_tree.animation_finished
 		is_attacking = false
-		weapon.queue_free()
 
 # Function to round blend position axis values to nearest integers.
 # As player moves diagonally, x and y blend values become floats between
