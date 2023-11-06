@@ -1,0 +1,18 @@
+~ start
+
+if State.enemy_status == "dead":
+	Mason: Sup, killed it for you.
+	Bon: Great, thank you!
+	Mason: ...
+	Bon: ...
+	Mason: ... So, like, no reward?
+	Bon: No, our developer hasn't gone that far yet.
+	Mason: Okay.
+else:
+	Mason: Yo!
+	Bon: Hey, what's up?
+	Mason: Nothing much! I just saw this lizard thing outside, though.
+	Bon: Oh. That thing again. Could you perhaps go and kill it for me please? I know it's chilling and that, but it just keeps coming back.
+	Mason: Sure. Be right back.
+
+=> END

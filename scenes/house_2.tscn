@@ -1,13 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://c7rrhvimte0kn"]
+[gd_scene load_steps=10 format=3 uid="uid://c7rrhvimte0kn"]
 
 [ext_resource type="Script" path="res://scenes/house_2.gd" id="1_bq1fx"]
 [ext_resource type="PackedScene" uid="uid://bk3k3075wlpho" path="res://scenes/indoor_2.tscn" id="2_ym8sp"]
 [ext_resource type="PackedScene" uid="uid://inplngiwhrep" path="res://scenes/player.tscn" id="3_6a65q"]
 [ext_resource type="PackedScene" uid="uid://ddtqf6il86o8e" path="res://scenes/health_potion.tscn" id="4_llkcf"]
+[ext_resource type="PackedScene" uid="uid://byxwgx4lroqmn" path="res://scenes/actionable.tscn" id="5_h54lo"]
 [ext_resource type="PackedScene" uid="uid://i6wdyq62x1fe" path="res://scenes/npc_1.tscn" id="5_hiftj"]
+[ext_resource type="Resource" uid="uid://batojbfaong7f" path="res://dialogue/main.dialogue" id="6_iwm5n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hatc5"]
 size = Vector2(18, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_erpp8"]
+size = Vector2(20, 8.1)
 
 [node name="House2" type="Node2D"]
 script = ExtResource("1_bq1fx")
@@ -25,6 +30,13 @@ position = Vector2(178, 82)
 
 [node name="NPC1" parent="." instance=ExtResource("5_hiftj")]
 position = Vector2(128, 103)
+
+[node name="Actionable" parent="NPC1" instance=ExtResource("5_h54lo")]
+dialogue_resource = ExtResource("6_iwm5n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC1/Actionable"]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_erpp8")
 
 [node name="Player" parent="." instance=ExtResource("3_6a65q")]
 position = Vector2(72, 148)

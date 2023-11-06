@@ -16,6 +16,7 @@ var collision
 @export var weapon_point_up : Node
 @export var weapon_point_down : Node
 @export var collision_polygon : Node
+@export var actionable_finder : Node
 
 func _ready():
 	animation_tree.active = true
@@ -27,7 +28,11 @@ func _physics_process(delta):
 	collision = move_and_collide(velocity * delta)
 	get_input()
 	play_move_animations()
-	play_attack_animations()
+	
+	# Check if there's Actionable overlap, else player can attack
+	var actionables = actionable_finder.get_overlapping_areas()
+	if actionables.size() == 0:
+		play_attack_animations()
 	
 	if collision:
 		# Allows player to slide on walls
@@ -40,6 +45,15 @@ func _physics_process(delta):
 	if Global.player_hp == 0:
 		died()
 
+# Checks and plays dialogue
+func _unhandled_input(event):
+	if Input.is_action_just_pressed("attack"):
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() > 0:
+			# Interact with NPC 
+			actionables[0].action()
+			return
+
 func get_input():
 	# Enable player movement if not attacking
 	if !is_attacking && is_visible_in_tree():
@@ -51,7 +65,7 @@ func get_input():
 	else:
 		# Else stop player movement when attacking
 		velocity = Vector2.ZERO
-	
+
 func play_move_animations():
 	# If player not moving, travel to idle animation
 	if input_direction == Vector2.ZERO:
