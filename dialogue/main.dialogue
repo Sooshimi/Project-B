@@ -1,18 +1,42 @@
 ~ start
 
-if State.enemy_status == "dead":
-	Mason: Sup, killed it for you.
-	Bon: Great, thank you!
-	Mason: ...
-	Bon: ...
-	Mason: ... So, like, no reward?
-	Bon: No, our developer hasn't gone that far yet.
-	Mason: Okay.
-else:
+if !State.bon_interacted and !State.enemy_alive:
 	Mason: Yo!
 	Bon: Hey, what's up?
-	Mason: Nothing much! I just saw this lizard thing outside, though.
-	Bon: Oh. That thing again. Could you perhaps go and kill it for me please? I know it's chilling and that, but it just keeps coming back.
-	Mason: Sure. Be right back.
+	Mason: Nothing much! Although I did I see a lizard outside.
+	Bon: Oh. That thing again. Could you go and kill it for me please? I know it's chilling and that, but it just keeps coming back.
+	Mason: Ah, so I've already killed it.
+	Bon: Oh great! I guess you just go around killing stuff on sight then?
+	Mason: More or less, if they look like an enemy. So, like, do I get a reward?
+	Bon: No... you usually get a reward AFTER speaking to- you know what. Restart the game and speak to me first.
+	set State.bon_interacted = true
+	set State.bon_quest_completed = true
+	set State.bon_interacted_after_kill = true
+elif !State.bon_quest_completed:
+	if State.enemy_alive and !State.bon_interacted:
+		Mason: Yo!
+		Bon: Hey, what's up?
+		Mason: Nothing much! I just saw this lizard thing outside, though.
+		Bon: Oh. That thing again. Could you go and kill it for me please? I know it's chilling and that, but it just keeps coming back.
+		Mason: Sure. Be right back.
+		set State.bon_interacted = true
+	elif State.enemy_alive and State.bon_interacted:
+		Bon: Hey! Did you kill that lizard?
+		Mason: Nope.
+		Bon: Oh. Well, let me know when you have please. It stares at me.
+	else:
+		Mason: Sup, killed it for you.
+		Bon: Great, thank you!
+		Mason: ...
+		Bon: ...
+		Mason: ... So, like, no reward?
+		Bon: No, our developer hasn't gone that far yet.
+		Mason: Oh.
+		set State.bon_quest_completed = true
+else:
+	if State.bon_interacted_after_kill:
+		Bon: Hi, it's you again.
+	else:
+		Bon: Hi, it's you again. Our developer still hasn't figured out the rewards yet, so you'll have to wait.
 
 => END
