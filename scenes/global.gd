@@ -6,13 +6,20 @@ var start_game := true
 var player_hp := 3
 var max_player_hp := 3
 var ui = null
+var quest_page = null
 
 func _ready():
 	get_scene()
 
-func _input(event):
+func _unhandled_input(event):
 	if Input.is_action_pressed("escape"):
 		get_tree().quit()
+	if Input.is_action_just_pressed("quest_page"):
+		var page = current_scene.get_node("QuestPage")
+		if page.visible:
+			current_scene.get_node("QuestPage").hide()
+		else:
+			current_scene.get_node("QuestPage").show()
 
 func get_scene():
 	var root = get_tree().get_root()
@@ -48,6 +55,12 @@ func _deferred_add_ui_to_scene(path:String):
 	var load_ui = ResourceLoader.load(path)
 	ui = load_ui.instantiate()
 	get_scene().add_child(ui)
+	add_quest_page_to_scene()
+
+func add_quest_page_to_scene():
+	var load_quest_page = ResourceLoader.load("res://scenes/quest_page.tscn")
+	quest_page = load_quest_page.instantiate()
+	get_scene().add_child(quest_page)
 
 func damage_player(amount:int):
 	player_hp -= amount

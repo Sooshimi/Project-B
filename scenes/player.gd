@@ -50,7 +50,7 @@ func _unhandled_input(event):
 	if Input.is_action_just_pressed("attack"):
 		var actionables = actionable_finder.get_overlapping_areas()
 		if actionables.size() > 0:
-			# Interact with NPC 
+			# Interact with NPC
 			actionables[0].action()
 			return
 

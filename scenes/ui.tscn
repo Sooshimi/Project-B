@@ -12,6 +12,5 @@ heart_container = NodePath("HeartContainer")
 offset_left = 2.0
 offset_top = 2.0
 offset_right = 52.0
-offset_bottom = 42.0
+offset_bottom = 22.0
 theme_override_constants/separation = 2
-metadata/_edit_group_ = true

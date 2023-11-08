@@ -4,6 +4,7 @@ extends Node2D
 @export var player_start_position : Node
 
 func _ready():
+	Global.add_ui_to_scene("res://scenes/ui.tscn")
 	# Spawns player in the middle of the map on first game launch
 	if Global.start_game:
 		var player := player_scene.instantiate()

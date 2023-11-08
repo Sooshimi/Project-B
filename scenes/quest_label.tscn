@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://phm0cqvhrol4"]
+
+[ext_resource type="Script" path="res://scenes/quest_label.gd" id="1_01fjh"]
+
+[node name="QuestLabel" type="Label"]
+theme_override_font_sizes/font_size = 8
+text = "Placeholder"
+horizontal_alignment = 1
+autowrap_mode = 2
+script = ExtResource("1_01fjh")
