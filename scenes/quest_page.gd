@@ -17,9 +17,9 @@ func _ready():
 func update_quest_page():
 	var quest_label = quest_label_scene.instantiate()
 	
-	# Checks every character list in State
+	# Iterates through every character that the player has started a quest with
 	for character_1 in State.quests_started:
-		# Checks every character in quest dictionary
+		# Iterates through every character in the quest dictionary
 		for character_2 in quest_dict:
 			# Checks if both character names match from both arrays
 			if character_1 == character_2:
