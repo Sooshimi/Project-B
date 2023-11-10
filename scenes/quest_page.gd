@@ -3,9 +3,7 @@ extends CanvasLayer
 @onready var quest_label_scene = load("res://scenes/quest_label.tscn")
 @onready var quest_list = %QuestList
 
-var quest_dict : Dictionary = {"bon": "Kill lizard"}
-
-var quest_dict_2: Dictionary = \
+var quest_dict: Dictionary = \
 	{"bon" =  {"quest_name": "Kill lizard for Bon",\
 			  "hand_in_text": "Talk to Bon"}}
 
@@ -22,7 +20,7 @@ func update_quest_page():
 	# Checks every character list in State
 	for character_1 in State.quests_started:
 		# Checks every character in quest dictionary
-		for character_2 in quest_dict_2:
+		for character_2 in quest_dict:
 			# Checks if both character names match from both arrays
 			if character_1 == character_2:
 				# If the quest label node doesn'texist, add the quest label
@@ -32,11 +30,11 @@ func update_quest_page():
 				# Update existing quest label's text to the hand-in text after
 				# the lizard is killed.
 				if State.bon_quest_hand_in:
-					quest_list.get_node("QuestLabel").text = quest_dict_2[character_2]["hand_in_text"]
+					quest_list.get_node("QuestLabel").text = quest_dict[character_2]["hand_in_text"]
 				else:
 					# Otherwise, update quest label text to the quest name when
 					# the quest is first picked up
-					quest_label.text = quest_dict_2[character_2]["quest_name"]
+					quest_label.text = quest_dict[character_2]["quest_name"]
 				
 				# Remove the quest label if it exists and quest is completed
 				if quest_list.get_node("QuestLabel") != null && State.bon_quest_completed:
