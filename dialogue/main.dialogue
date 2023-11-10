@@ -18,10 +18,10 @@ if !State.npc_state["bon"]["interacted"] and !State.npc_state["bon"]["lizard_ali
 elif !State.npc_state["bon"]["quest_completed"]:
 	if State.npc_state["bon"]["lizard_alive"] and !State.npc_state["bon"]["interacted"]:
 		Mason: Yo!
-#		Bon: Hey, what's up?
-#		Mason: Nothing much! I just saw this lizard thing outside, though.
-#		Bon: Oh. That thing again. Could you go and kill it for me please? I know it's chilling and that, but it just keeps coming back.
-#		Mason: Sure. Be right back.
+		Bon: Hey, what's up?
+		Mason: Nothing much! I just saw this lizard thing outside, though.
+		Bon: Oh. That thing again. Could you go and kill it for me please? I know it's chilling and that, but it just keeps coming back.
+		Mason: Sure. Be right back.
 		set State.npc_state["bon"]["interacted"] = true
 		set State.check_and_append("bon")
 	elif State.npc_state["bon"]["lizard_alive"] and State.npc_state["bon"]["interacted"]:

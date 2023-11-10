@@ -34,8 +34,8 @@ func update_quest_page():
 					# .. check if quest label's character origin matches the
 					# current character of the quest we're iterating through
 					if quest_list.get_node("QuestLabel").character_origin == character_2:
-						# Update existing quest label's text to the hand-in text after
-						# the lizard is killed.
+						# Update existing quest label's text to the hand-in text
+						# after the quest can be handed in.
 						if State.npc_state[character_2]["quest_hand_in"]:
 							quest_list.get_node("QuestLabel").text = quest_dict[character_2]["hand_in_text"]
 						else:
@@ -44,5 +44,7 @@ func update_quest_page():
 							quest_label.text = quest_dict[character_2]["quest_name"]
 						
 						# Remove the quest label if it exists and quest is completed
-						if quest_list.get_node("QuestLabel") != null && State.npc_state[character_2]["quest_completed"]:
+						if \
+						quest_list.get_node("QuestLabel") != null &&\
+						State.npc_state[character_2]["quest_completed"]:
 							quest_list.get_node("QuestLabel").queue_free()
