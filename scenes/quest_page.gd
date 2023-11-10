@@ -23,7 +23,7 @@ func update_quest_page():
 		for character_2 in quest_dict:
 			# Checks if both character names match from both arrays
 			if character_1 == character_2:
-				# If the quest label node doesn'texist, add the quest label
+				# If the quest label node doesn't exist, add the quest label
 				if quest_list.get_node("QuestLabel") == null:
 					# Assign character origin id to the quest label
 					quest_label.character_origin = character_2
