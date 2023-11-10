@@ -9,12 +9,11 @@ var bon_quest_hand_in := false
 
 var quests_started : Array = []
 
-signal quest_started
+# This signal is emitted whenever this function is called. This signal is
+# connected to the QuestPage where it updates the quest page depending on the
+# quest states from this State script.
 signal quest_ping
-
 func emit_quest_ping():
-	enemy_alive = false
-	bon_quest_hand_in = true
 	quest_ping.connect(get_tree().current_scene.get_node("QuestPage").update_quest_page)
 	quest_ping.emit()
 
@@ -25,6 +24,7 @@ func emit_quest_ping():
 # duplicates.
 # The quest_start signal is connected to a QuestPage scene function and emitted
 # to update the quest page.
+signal quest_started
 func check_and_append(name: String):
 	if !quests_started.has(name):
 		quests_started.append(name)
