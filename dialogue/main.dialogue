@@ -15,10 +15,10 @@ if !State.bon_interacted and !State.enemy_alive:
 elif !State.bon_quest_completed:
 	if State.enemy_alive and !State.bon_interacted:
 		Mason: Yo!
-		Bon: Hey, what's up?
-		Mason: Nothing much! I just saw this lizard thing outside, though.
-		Bon: Oh. That thing again. Could you go and kill it for me please? I know it's chilling and that, but it just keeps coming back.
-		Mason: Sure. Be right back.
+#		Bon: Hey, what's up?
+#		Mason: Nothing much! I just saw this lizard thing outside, though.
+#		Bon: Oh. That thing again. Could you go and kill it for me please? I know it's chilling and that, but it just keeps coming back.
+#		Mason: Sure. Be right back.
 		set State.bon_interacted = true
 		set State.check_and_append("bon")
 	elif State.enemy_alive and State.bon_interacted:
@@ -34,6 +34,7 @@ elif !State.bon_quest_completed:
 		Bon: No, our developer hasn't gone that far yet.
 		Mason: Oh.
 		set State.bon_quest_completed = true
+		set State.emit_quest_ping()
 else:
 	if State.bon_interacted_after_kill:
 		Bon: Hi, it's you again.

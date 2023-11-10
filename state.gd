@@ -5,10 +5,18 @@ var enemy_alive := true
 var bon_interacted := false
 var bon_interacted_after_kill := false
 var bon_quest_completed := false
+var bon_quest_hand_in := false
 
 var quests_started : Array = []
 
 signal quest_started
+signal quest_ping
+
+func emit_quest_ping():
+	enemy_alive = false
+	bon_quest_hand_in = true
+	quest_ping.connect(get_tree().current_scene.get_node("QuestPage").update_quest_page)
+	quest_ping.emit()
 
 # The quests_started array is appended with names of NPCs whenever their quests
 # have started.

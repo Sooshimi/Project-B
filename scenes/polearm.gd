@@ -8,7 +8,7 @@ func _process(delta):
 
 func _on_body_entered(body):
 	body.queue_free()
-	State.enemy_alive = false
+	State.emit_quest_ping()
 
 func remove_after_attack():
 	if !get_parent().is_attacking:
