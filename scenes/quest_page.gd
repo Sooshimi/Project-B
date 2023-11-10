@@ -29,8 +29,8 @@ func update_quest_page():
 					quest_label.character_origin = character_2
 					quest_list.add_child(quest_label)
 				
-				# For every node in Quest List..
-				for node in quest_list.get_children():
+				# For every quest label node in Quest List..
+				for quest in quest_list.get_children():
 					# .. check if quest label's character origin matches the
 					# current character of the quest we're iterating through
 					if quest_list.get_node("QuestLabel").character_origin == character_2:
