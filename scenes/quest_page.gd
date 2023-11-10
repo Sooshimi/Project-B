@@ -6,7 +6,7 @@ extends CanvasLayer
 var quest_dict : Dictionary = {"bon": "Kill lizard"}
 
 var quest_dict_2: Dictionary = \
-	{"bon" =  {"quest_name": "Kill lizard",\
+	{"bon" =  {"quest_name": "Kill lizard for Bon",\
 			  "hand_in_text": "Talk to Bon"}}
 
 func _ready():
@@ -32,11 +32,11 @@ func update_quest_page():
 				# Update existing quest label's text to the hand-in text after
 				# the lizard is killed.
 				if State.bon_quest_hand_in:
-					quest_list.get_node("QuestLabel").text = str(quest_dict_2[character_2]["hand_in_text"])
+					quest_list.get_node("QuestLabel").text = quest_dict_2[character_2]["hand_in_text"]
 				else:
 					# Otherwise, update quest label text to the quest name when
 					# the quest is first picked up
-					quest_label.text = str(character_2.capitalize(), " - ", quest_dict_2[character_2]["quest_name"])
+					quest_label.text = quest_dict_2[character_2]["quest_name"]
 				
 				# Remove the quest label if it exists and quest is completed
 				if quest_list.get_node("QuestLabel") != null && State.bon_quest_completed:
