@@ -46,7 +46,7 @@ func _physics_process(delta):
 		died()
 
 # Checks and plays dialogue
-func _unhandled_input(event):
+func _unhandled_input(_event):
 	if Input.is_action_just_pressed("attack"):
 		var actionables = actionable_finder.get_overlapping_areas()
 		if actionables.size() > 0:

@@ -11,10 +11,6 @@ func _ready():
 		heart = heart_scene.instantiate()
 		heart_container.add_child(heart)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func minus_hearts(amount:int):
 	for i in range(amount):
 		var last_child = heart_container.get_child_count() - 1

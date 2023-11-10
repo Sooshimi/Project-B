@@ -24,8 +24,8 @@ func emit_quest_ping():
 # The quest_start signal is connected to a QuestPage scene function and emitted
 # to update the quest page.
 signal quest_started
-func check_and_append(name: String):
-	if !quests_started.has(name):
-		quests_started.append(name)
+func check_and_append(character_name: String):
+	if !quests_started.has(character_name):
+		quests_started.append(character_name)
 		quest_started.connect(get_tree().current_scene.get_node("QuestPage").update_quest_page)
 		quest_started.emit()

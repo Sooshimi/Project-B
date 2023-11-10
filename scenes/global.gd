@@ -11,7 +11,7 @@ var quest_page = null
 func _ready():
 	get_scene()
 
-func _unhandled_input(event):
+func _unhandled_input(_event):
 	if Input.is_action_pressed("escape"):
 		get_tree().quit()
 	if Input.is_action_just_pressed("quest_page"):

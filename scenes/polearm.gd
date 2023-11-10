@@ -3,7 +3,7 @@ extends Area2D
 func _ready():
 	pass
 
-func _process(delta):
+func _process(_delta):
 	remove_after_attack()
 
 func _on_body_entered(body):
