@@ -7,6 +7,7 @@ var chase := false
 var knockback_strength := 250
 var collision
 var player : Node
+var enemy_name := "lizard"
 
 @export var animation_tree : Node
 @export var hit_cooldown_timer : Node

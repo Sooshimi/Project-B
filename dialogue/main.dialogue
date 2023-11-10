@@ -1,6 +1,6 @@
 ~ start
 
-if !State.bon_interacted and !State.enemy_alive:
+if !State.npc_state["bon"]["interacted"] and !State.npc_state["bon"]["lizard_alive"]:
 	Mason: Yo!
 	Bon: Hey, what's up?
 	Mason: Nothing much! Although I did I see a lizard outside.
@@ -9,19 +9,22 @@ if !State.bon_interacted and !State.enemy_alive:
 	Bon: Oh great! I guess you just go around killing stuff on sight then?
 	Mason: More or less, if they look like an enemy. So, like, do I get a reward?
 	Bon: No... you usually get a reward AFTER speaking to- you know what. Restart the game and speak to me first.
-	set State.bon_interacted = true
-	set State.bon_quest_completed = true
-	set State.bon_interacted_after_kill = true
-elif !State.bon_quest_completed:
-	if State.enemy_alive and !State.bon_interacted:
+#	set State.bon_interacted = true
+	set State.npc_state["bon"]["interacted"] = true
+#	set State.bon_quest_completed = true
+	set State.npc_state["bon"]["quest_completed"] = true
+#	set State.bon_interacted_after_kill = true
+	set State.npc_state["bon"]["interacted_after_kill"] = true
+elif !State.npc_state["bon"]["quest_completed"]:
+	if State.npc_state["bon"]["lizard_alive"] and !State.npc_state["bon"]["interacted"]:
 		Mason: Yo!
-		Bon: Hey, what's up?
-		Mason: Nothing much! I just saw this lizard thing outside, though.
-		Bon: Oh. That thing again. Could you go and kill it for me please? I know it's chilling and that, but it just keeps coming back.
-		Mason: Sure. Be right back.
-		set State.bon_interacted = true
+#		Bon: Hey, what's up?
+#		Mason: Nothing much! I just saw this lizard thing outside, though.
+#		Bon: Oh. That thing again. Could you go and kill it for me please? I know it's chilling and that, but it just keeps coming back.
+#		Mason: Sure. Be right back.
+		set State.npc_state["bon"]["interacted"] = true
 		set State.check_and_append("bon")
-	elif State.enemy_alive and State.bon_interacted:
+	elif State.npc_state["bon"]["lizard_alive"] and State.npc_state["bon"]["interacted"]:
 		Bon: Hey! Did you kill that lizard?
 		Mason: Nope.
 		Bon: Oh. Well, let me know when you have please. It stares at me.
@@ -33,10 +36,10 @@ elif !State.bon_quest_completed:
 		Mason: ... So, like, no reward?
 		Bon: No, our developer hasn't gone that far yet.
 		Mason: Oh.
-		set State.bon_quest_completed = true
+		set State.npc_state["bon"]["quest_completed"] = true
 		set State.emit_quest_ping()
 else:
-	if State.bon_interacted_after_kill:
+	if State.npc_state["bon"]["interacted_after_kill"]:
 		Bon: Hi, it's you again.
 	else:
 		Bon: Hi, it's you again. Our developer still hasn't figured out the rewards yet, so you'll have to wait.

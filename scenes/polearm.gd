@@ -7,10 +7,12 @@ func _process(delta):
 	remove_after_attack()
 
 func _on_body_entered(body):
+	if body.name == "Enemy1": # Bon's Lizard quest
+		State.npc_state["bon"]["lizard_alive"] = false
+		State.npc_state["bon"]["quest_hand_in"] = true
+		State.emit_quest_ping()
+	
 	body.queue_free()
-	State.enemy_alive = false
-	State.bon_quest_hand_in = true
-	State.emit_quest_ping()
 
 func remove_after_attack():
 	if !get_parent().is_attacking:

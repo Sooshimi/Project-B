@@ -1,11 +1,10 @@
 extends Node
 
-var enemy_alive := true
-
-var bon_interacted := false
-var bon_interacted_after_kill := false
-var bon_quest_completed := false
-var bon_quest_hand_in := false
+var npc_state : Dictionary = {"bon" = {"interacted": false,\
+									   "interacted_after_kill": false,\
+									   "lizard_alive": true,\
+									   "quest_completed": false,\
+									   "quest_hand_in": false}}
 
 var quests_started : Array = []
 
