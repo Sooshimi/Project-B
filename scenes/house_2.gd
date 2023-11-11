@@ -1,7 +1,7 @@
 extends Node2D
 
 func _ready():
-	pass
+	Audio.play_bg_music("bon")
 
 func _process(delta):
 	pass
