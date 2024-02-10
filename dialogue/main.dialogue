@@ -9,11 +9,8 @@ if !State.npc_state["bon"]["interacted"] and !State.npc_state["bon"]["lizard_ali
 	Bon: Oh great! I guess you just go around killing stuff on sight then?
 	Mason: More or less, if they look like an enemy. So, like, do I get a reward?
 	Bon: No... you usually get a reward AFTER speaking to- you know what. Restart the game and speak to me first.
-#	set State.bon_interacted = true
 	set State.npc_state["bon"]["interacted"] = true
-#	set State.bon_quest_completed = true
 	set State.npc_state["bon"]["quest_completed"] = true
-#	set State.bon_interacted_after_kill = true
 	set State.npc_state["bon"]["interacted_after_kill"] = true
 elif !State.npc_state["bon"]["quest_completed"]:
 	if State.npc_state["bon"]["lizard_alive"] and !State.npc_state["bon"]["interacted"]:
