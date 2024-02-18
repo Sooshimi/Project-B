@@ -9,6 +9,7 @@ var collision
 var player : Node
 var enemy_name := "lizard"
 
+
 @export var animation_tree : Node
 @export var hit_cooldown_timer : Node
 @export var stop_movement_timer : Node
@@ -20,7 +21,7 @@ func _ready():
 func _process(delta):
 	player = Global.get_scene().get_node("Player")
 	
-	# Get relative direction between player and enemy position.
+	# Get relative direction between player and enemy position
 	# Normalize so length of vector is 1.
 	relative_direction = (player.position - position).normalized()
 	
