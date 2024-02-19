@@ -9,7 +9,6 @@ var collision
 var player : Node
 var enemy_name := "lizard"
 
-
 @export var animation_tree : Node
 @export var hit_cooldown_timer : Node
 @export var stop_movement_timer : Node
