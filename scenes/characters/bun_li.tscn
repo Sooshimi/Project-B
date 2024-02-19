@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dvc8nhfe3ggur"]
 
-[ext_resource type="Texture2D" uid="uid://lwsdncuegy7d" path="res://assets/characters/Bun_Li_listen_whisper_idle.png" id="1_1o1ck"]
+[ext_resource type="Texture2D" uid="uid://bsa0di3fajdas" path="res://assets/characters/Bun_Li_listen_whisper_idle_V2.png" id="1_nmni5"]
 
 [sub_resource type="Animation" id="Animation_bbnhg"]
 resource_name = "listening_south"
@@ -43,7 +43,7 @@ _data = {
 [node name="Bun Li" type="CharacterBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_1o1ck")
+texture = ExtResource("1_nmni5")
 hframes = 9
 vframes = 3
 region_rect = Rect2(32, 2, 24, 23)

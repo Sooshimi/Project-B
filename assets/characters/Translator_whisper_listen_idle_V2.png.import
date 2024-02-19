@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xwtvdk8lt3ta"
-path="res://.godot/imported/Translator_whisper_listen_idle.png-8428dd855d56f2a67c4b8c9d60556a00.ctex"
+uid="uid://d1lvwim6jc7ro"
+path="res://.godot/imported/Translator_whisper_listen_idle_V2.png-304d36ac7e12e037e9fbe19456098674.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/Translator_whisper_listen_idle.png"
-dest_files=["res://.godot/imported/Translator_whisper_listen_idle.png-8428dd855d56f2a67c4b8c9d60556a00.ctex"]
+source_file="res://assets/characters/Translator_whisper_listen_idle_V2.png"
+dest_files=["res://.godot/imported/Translator_whisper_listen_idle_V2.png-304d36ac7e12e037e9fbe19456098674.ctex"]
 
 [params]
 

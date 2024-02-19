@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lwsdncuegy7d"
-path="res://.godot/imported/Bun_Li_listen_whisper_idle.png-56e2244b46fc09c4c6852bb11a6c217a.ctex"
+uid="uid://bsa0di3fajdas"
+path="res://.godot/imported/Bun_Li_listen_whisper_idle_V2.png-ccb96ef08946ad90f56c61944ed6ad90.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/Bun_Li_listen_whisper_idle.png"
-dest_files=["res://.godot/imported/Bun_Li_listen_whisper_idle.png-56e2244b46fc09c4c6852bb11a6c217a.ctex"]
+source_file="res://assets/characters/Bun_Li_listen_whisper_idle_V2.png"
+dest_files=["res://.godot/imported/Bun_Li_listen_whisper_idle_V2.png-ccb96ef08946ad90f56c61944ed6ad90.ctex"]
 
 [params]
 
