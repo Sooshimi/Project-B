@@ -2,39 +2,27 @@
 
 [ext_resource type="PackedScene" uid="uid://inplngiwhrep" path="res://scenes/player.tscn" id="1_d80rc"]
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_dvs6a"]
-[ext_resource type="PackedScene" uid="uid://dogp0wxakg6s6" path="res://scenes/enemy_1.tscn" id="4_s32je"]
 [ext_resource type="PackedScene" uid="uid://2xxvj5h3a4nu" path="res://scenes/maps/office.tscn" id="4_v2ou1"]
+[ext_resource type="PackedScene" uid="uid://dvc8nhfe3ggur" path="res://scenes/characters/bun_li.tscn" id="5_su215"]
+[ext_resource type="PackedScene" uid="uid://2dq71ucbuuvu" path="res://scenes/characters/translator.tscn" id="6_ct80m"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3uc3k"]
-size = Vector2(14, 0.5)
-
-[node name="main" type="Node2D" node_paths=PackedStringArray("player_start_position")]
+[node name="main" type="Node2D"]
 position = Vector2(335, 202)
 script = ExtResource("1_dvs6a")
 player_scene = ExtResource("1_d80rc")
-player_start_position = NodePath("PlayerStartPosition")
 
 [node name="Office" parent="." instance=ExtResource("4_v2ou1")]
 position = Vector2(-163, 2)
 
-[node name="PlayerStartPosition" type="Marker2D" parent="."]
-position = Vector2(-202, -107)
+[node name="Player" parent="." instance=ExtResource("1_d80rc")]
+position = Vector2(-187, -97)
 
-[node name="EnterBuilding1" type="Area2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EnterBuilding1"]
-position = Vector2(-215, -119)
-shape = SubResource("RectangleShape2D_3uc3k")
+[node name="Bun Li" parent="." instance=ExtResource("5_su215")]
+position = Vector2(-122, -138)
 
-[node name="EnterBuilding2" type="Area2D" parent="."]
-position = Vector2(96, -32)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EnterBuilding2"]
-position = Vector2(-215, -119)
-shape = SubResource("RectangleShape2D_3uc3k")
-
-[node name="Enemy1" parent="." instance=ExtResource("4_s32je")]
-position = Vector2(-278, -82)
-
-[connection signal="body_entered" from="EnterBuilding1" to="." method="_on_enter_building_1_body_entered"]
-[connection signal="body_entered" from="EnterBuilding2" to="." method="_on_enter_building_2_body_entered"]
+[node name="Translator" parent="." instance=ExtResource("6_ct80m")]
+position = Vector2(-55, -170)
