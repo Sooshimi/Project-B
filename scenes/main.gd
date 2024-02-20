@@ -4,7 +4,7 @@ extends Node2D
 @export var player_start_position : Node
 
 func _ready():
-	Audio.play_bg_music("village")
+	#Audio.play_bg_music("village")
 	Global.add_ui_to_scene("res://scenes/ui.tscn")
 	# Spawns player in the middle of the map on first game launch
 	if Global.start_game:

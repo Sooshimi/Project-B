@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://inplngiwhrep" path="res://scenes/player.tscn" id="1_d80rc"]
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_dvs6a"]
-[ext_resource type="PackedScene" uid="uid://hxha8q48ymkh" path="res://scenes/map.tscn" id="2_m5wda"]
 [ext_resource type="PackedScene" uid="uid://dogp0wxakg6s6" path="res://scenes/enemy_1.tscn" id="4_s32je"]
+[ext_resource type="PackedScene" uid="uid://2xxvj5h3a4nu" path="res://scenes/maps/office.tscn" id="4_v2ou1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3uc3k"]
 size = Vector2(14, 0.5)
@@ -14,11 +14,11 @@ script = ExtResource("1_dvs6a")
 player_scene = ExtResource("1_d80rc")
 player_start_position = NodePath("PlayerStartPosition")
 
-[node name="Map" parent="." instance=ExtResource("2_m5wda")]
-position = Vector2(-335, -202)
+[node name="Office" parent="." instance=ExtResource("4_v2ou1")]
+position = Vector2(-163, 2)
 
 [node name="PlayerStartPosition" type="Marker2D" parent="."]
-position = Vector2(-188, -56)
+position = Vector2(-202, -107)
 
 [node name="EnterBuilding1" type="Area2D" parent="."]
 
